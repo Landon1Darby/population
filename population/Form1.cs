@@ -20,7 +20,7 @@ namespace population
             // initialize population list
             string line;
             StreamReader streamReader = new StreamReader("USPopulation.txt");
-            while(!streamReader.EndOfStream) 
+            while (!streamReader.EndOfStream)
             {
                 line = streamReader.ReadLine();
                 popList.Add(int.Parse(line) * 1000);
@@ -41,7 +41,7 @@ namespace population
         private int Average()
         {
             int total = 0;
-            foreach (int i in changeList) 
+            foreach (int i in changeList)
             {
                 total += i;
             }
@@ -51,9 +51,9 @@ namespace population
         private int MaxChange()
         {
             int largest = 0;
-            for(int i = 0; i < changeList.Count; i++)
-                if(changeList[i] > largest) largest = i;
-            
+            for (int i = 0; i < changeList.Count; i++)
+                if (changeList[i] > largest) largest = i;
+
             return 1950 + largest;
         }
 
